@@ -1,30 +1,48 @@
 #include<stdio.h>
-#include<conio.h>
-void main()
-{
-	int a[5]={5,4,3,2,1},i,k,temp;
-	clrscr();
+#include<stdlib.h>
+int main(){
 
-	for(k=0;k<5;k++)
-	{
-		for(i=0;i<4;i++)
-		{
-			if(a[i]>a[i+1])
-			{
-				temp=a[i];
-				a[i]=a[i+1];
-				a[i+1]=temp;
+	int length, i, k, num[1000], aux;
+	char order;
 
+	printf("What is the length of your sequence?\nType here: ");
+	scanf("%d", &length);
+	printf("Type the numbers that you want to order:\n");
+	for(i=0; i<length; i++){
+		scanf("%d", &num[i]);
+	}
+	printf("You want to put in which ordination: crescent(C) or decrescent(D)? ");
+	scanf(" %c", &order);
+
+	if(order=='C' || order=='c'){
+		for(i=0; i<length; i++){
+			for(k=0; k<length; k++){
+				if(num[k]>num[k+1]){
+					aux=num[k];
+					num[k]=num[k+1];
+					num[k+1]=aux;
+				}
 			}
-
 		}
-
-
+		printf("Your sequence in crescent ordination is: ");
+		for(i=0; i<length; i++){
+			printf("%d a ", num[i]);
+		}
+	}else if(order=='D' || order=='d'){
+		for(i=0; i<length; i++){
+			for(k=0; k<length-1; k++){
+				if(num[k]<num[k+1]){
+					aux=num[k];
+					num[k]=num[k+1];
+					num[k+1]=aux;
+				}
+			}
+		}
+		printf("Your sequence in decrescent ordination is: ");
+		for(i=0; i<length; i++){
+			printf("%d ", num[i]);
+		}
 	}
-	for(i=0;i<5;i++)
-	{
-		printf("%d",a[i]);
-	}
 
-	getch();
+	return 0;
 }
