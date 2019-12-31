@@ -3,7 +3,7 @@
 #include<string.h>
 void main()
 {
-	 char str1[10],c='n';
+	 char str1[10],c='C’;
 	clrscr();
 	int i;
 	printf("enter name");
