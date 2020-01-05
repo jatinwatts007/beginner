@@ -7,8 +7,8 @@ void main()
 	printf("enter any value to check whether it is even or odd\na=");
 	scanf("%d",&i);
 	if (i%2==0)
-		printf("%d this is a even number",i);
+		printf("%d This is a even number",i);
 	else
-		printf("this is a odd number");
+		printf("This is a odd number");
 	getch();
 }
